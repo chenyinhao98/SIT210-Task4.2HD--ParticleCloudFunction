@@ -1,0 +1,68 @@
+
+int RedLED = D7;
+int GreenLED = D6;
+int BlueLED = D5;
+
+void setup() 
+{
+    pinMode(RedLED, OUTPUT);
+    pinMode(BlueLED, OUTPUT);
+    pinMode(GreenLED, OUTPUT);
+
+    digitalWrite(RedLED, LOW);
+    digitalWrite(BlueLED, LOW);
+    digitalWrite(GreenLED, LOW);
+
+    Particle.function("LEDToggle", LEDToggle);
+}
+
+int LEDToggle(String command)
+{
+    if (command == "redon")
+    {
+        if (digitalRead(RedLED) == HIGH)
+        {
+            digitalWrite(RedLED, LOW);
+
+        }
+        else
+        {
+            digitalWrite(RedLED, HIGH);
+
+        }
+    }
+        else if (command == "greenon")
+    {
+        if (digitalRead(GreenLED) == HIGH)
+        {
+            digitalWrite(GreenLED, LOW);
+
+        }
+        else
+        {
+            digitalWrite(GreenLED, HIGH);
+        }
+    }
+    
+    else if (command == "blueon")
+    {
+        if (digitalRead(BlueLED) == HIGH)
+        {
+            digitalWrite(BlueLED, LOW);
+
+        }
+        else
+        {
+            digitalWrite(BlueLED, HIGH);
+
+        }
+    }
+
+    
+    return -1;
+}
+
+void loop() 
+{
+}
+
