@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title> LEDToggle</title>
+    </head>
+    <h1>LED Control Panel</h1>
+
+    <body>
+        <form action="https://api.particle.io/v1/devices/e00fce68752b728c54c10640/LEDToggle?access_token=fd98a0aa38e7ddb3cdaa9b324d5116805380895a" method="POST">
+            <input type="radio" name="command" value="redon"> Red LED
+            <br>
+            <br>
+            <input type="radio" name="command" value="greenon"> Green LED
+            <br>
+            <br>
+            <input type="radio" name="command" value="blueon"> Blue LED
+            <br>
+            <br>
+
+            <input type="submit" value="On/Off">
+        </form>
+    </body>
+<html>
